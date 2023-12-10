@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+</head>
+
+<body>
+    <main class="container">
+        <div id="containerMenuInicial">
+            <button onclick="selecionarModo(0)">Jogador x Jogador</button>
+            <button onclick="selecionarModo(1)">Jogador x Máquina </button>
+        </div>
+        <div class="containerJogo" id="containerJogo">
+            <div id="ferramentas">
+                <div>
+                    <div class="entradaJogadoresContainer">
+                        <img src="assets/x.svg">
+                        <input class="entradaJogadores" onchange="nomearJogador(this,1)" id="jogador1" type="text"
+                            placeholder="Jogador 1">
+                    </div>
+                    <div class="entradaJogadoresContainer">
+                        <img src="assets/o.svg">
+                        <input class="entradaJogadores" onchange="nomearJogador(this,2)" id="jogador2" type="text"
+                            placeholder="Jogador 2">
+                    </div>
+                </div>
+                <div id="placar">
+                    <p>Placar</p>
+                    <div id="pontosPlacar">
+                        <div id="pontosPlacarJogador1">
+                            <input type="text" id="placarJogador1" readonly>
+                            <input type="text" id="pontuacaoJogador1" class="pontuacao" readonly>
+
+                        </div>
+                        <div>
+                            <input type="text" id="placarJogador2" readonly>
+                            <input type="text" id="pontuacaoJogador2" class="pontuacao" readonly>
+                        </div>
+                    </div>
+                </div>
+                <button id="reiniciar" onclick="location.reload()">Menu Inicial</button>
+            </div>
+
+            <div id="tabela-wrapper">
+                <button id="botaoIniciar" onclick="iniciarJogo(this)">
+                    <p>Iniciar</p>
+                </button>
+                <div id="tabela">
+                    <input type="text" id="jogadorAtual" readonly>
+                    <div class="linha">
+                        <button class="botaoTabela" onclick="atualizarTabela(0, this, jogadorAtual)"></button>
+                        <button class="botaoMeio botaoTabela" onclick="atualizarTabela(1, this, jogadorAtual)"></button>
+                        <button class="botaoTabela" onclick="atualizarTabela(2, this, jogadorAtual)"></button>
+                    </div>
+
+                    <div class="linha" id="linhaMeio">
+                        <button class="botaoTabela" onclick="atualizarTabela(3, this, jogadorAtual)"></button>
+                        <button class="botaoMeio botaoTabela" onclick="atualizarTabela(4, this, jogadorAtual)"></button>
+                        <button class="botaoTabela" onclick="atualizarTabela(5, this, jogadorAtual)"></button>
+                    </div>
+
+                    <div class="linha">
+                        <button class="botaoTabela" onclick="atualizarTabela(6, this, jogadorAtual)"></button>
+                        <button class="botaoMeio botaoTabela" onclick="atualizarTabela(7, this, jogadorAtual)"></button>
+                        <button class="botaoTabela" onclick="atualizarTabela(8, this, jogadorAtual)"></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="botoes"></div>
+    </main>
+    <script src='script.js'></script>
+
+</body>
+
+</html>
